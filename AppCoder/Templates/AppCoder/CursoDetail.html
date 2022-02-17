@@ -1,0 +1,30 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h3>Detalle del curso</h3>
+<br>
+
+<FONT SIZE=3>
+<dl>
+    <dt>Curso</dt>
+    <dd>{{curso.grado}}</dd>
+    <dt>Division</dt>
+    <dd>{{curso.division}}</dd>
+    <dt>Turno</dt>
+    <dd>{{curso.turno}}</dd>
+    <dt>Año</dt>
+    <dd>{{curso.año}}</dd>
+  </dl>
+</font>
+
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaCurso' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

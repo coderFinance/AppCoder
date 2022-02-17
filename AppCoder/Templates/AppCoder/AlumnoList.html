@@ -1,0 +1,38 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+<br>
+    <button class="botoncreacion"><a class="link" href="{% url 'NewAlumno' %}">Agregar nuevo alumno</a></button><br>  
+
+
+<h1>Listado de Alumnos</h1>
+<br>
+
+<ul>
+    
+    {{object_list.as_table}}
+
+    {% for alumno in object_list %}
+        
+        <li>
+            <p>Alumno {{alumno.nombre}} {{alumno.apellido}} </p>
+            {% if alumno.imagen %}
+                <img height= '150px' src='/media/{{alumno.imagen}}'>
+            {% endif %}
+            <div>
+                <a href="{% url 'DetailAlumno' alumno.id %}">Ver</a>
+                <a href="{% url 'EditAlumno' alumno.id %}">Editar</a>
+                <a href="{% url 'DeleteAlumno' alumno.id %}">Borrar</a>    
+            </div>
+        </li>
+
+    {% endfor %}
+        
+</ul>
+
+
+
+{% endblock contenidoQueCambia %}

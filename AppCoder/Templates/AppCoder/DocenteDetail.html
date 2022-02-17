@@ -1,0 +1,33 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h3>Detalle del docente</h3>
+<br>
+
+<FONT SIZE=3>
+<dl>
+    <dt>Nombre</dt>
+    <dd>{{object.nombre}}</dd>
+    <dt>Apellido</dt>
+    <dd>{{object.apellido}}</dd>
+    <dt>DNI</dt>
+    <dd>{{object.dni}}</dd>
+    <dt>Teléfono de contacto</dt>
+    <dd>{{object.telefono_contacto}}</dd>
+    <dt>Email</dt>
+    <dd>{{object.email}}</dd>
+  </dl>
+</font>
+
+
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaDocente' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

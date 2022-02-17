@@ -1,0 +1,16 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+    <h1>Busqueda de Docente</h1>
+    <form action="/AppCoder/buscarDocente/", method="GET">
+
+        <label for="division">DNI:</label>
+        <input type="number" name="dni" id="dni">
+        <input type="submit" value="Buscar">
+    </form>
+
+{% endblock contenidoQueCambia %}

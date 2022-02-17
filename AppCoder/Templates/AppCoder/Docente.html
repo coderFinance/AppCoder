@@ -1,0 +1,24 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+<p>Listado de Docentes</p>
+
+<ul> 
+
+    {% for docente in lista %}
+        <li>
+            {{docente.nombre}} {{docente.apellido}} -   
+            DNI: {{docente.dni}} - 
+            Teléfono de Contacto:{{docente.telefono_contacto}}
+        </li>
+        <button>
+            <a href="{% url 'eliminaDocente' docente.id %}"> Eliminar</a>
+            <a href="{% url 'editarDocente' docente.nombre %}"> Editar</a>
+        </button>
+    {% endfor %}
+
+</ul>
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,30 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h3>Detalle del directivo</h3>
+<br>
+
+<FONT SIZE=3>
+<dl>
+    <dt>Nombre</dt>
+    <dd>{{directivo.nombre}}</dd>
+    <dt>Apellido</dt>
+    <dd>{{directivo.apellido}}</dd>
+    <dt>DNI</dt>
+    <dd>{{directivo.dni}}</dd>
+    <dt>Teléfono de contacto</dt>
+    <dd>{{directivo.telefono_contacto}}</dd>
+  </dl>
+</font>
+
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaDirectivo' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

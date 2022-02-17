@@ -1,0 +1,25 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h1>Edicion de docente</h1>
+
+    
+{% if form.errors %}
+    <p>Los datos ingresados son incorrectos</p>
+{% endif %}
+        
+
+<form class="FormDocente" action="{% url 'editarDocente' docente_nombre %}" method="POST">{% csrf_token %}
+
+    {{form.as_table}}
+
+    <input type="submit" value="Guardar cambios">
+
+
+</form>
+
+{% endblock contenidoQueCambia %}

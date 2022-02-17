@@ -1,0 +1,38 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+<br>
+
+    <button class="botoncreacion"><a class="link" href="{% url 'NewDirectivo' %}">Agregar nuevo Directivo</a></button><br>    
+
+
+<h1>Listado de directivos</h1>
+<br>
+
+<ul>
+    
+    {% for directivo in object_list %}
+        
+        <li>
+            <p>Directivo {{directivo.nombre}} {{directivo.apellido}} </p>
+            {% if directivo.imagen %}
+                <img height= '150px' src='/media/{{directivo.imagen}}'>
+            {% endif %}
+            <div>
+                <a href="{% url 'DetailDirectivo' directivo.id %}">Ver</a>
+                <a href="{% url 'EditDirectivo' directivo.id %}">Editar</a>
+                <a href="{% url 'DeleteDirectivo' directivo.id %}">Borrar</a>
+                
+            </div>
+        </li>
+
+    {% endfor %}
+        
+</ul>
+
+
+
+{% endblock contenidoQueCambia %}

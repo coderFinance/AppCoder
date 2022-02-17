@@ -1,0 +1,25 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+    {% if directivos %}
+    <h2>Resultado de la busqueda - Directivo dni: {{dni}}</h2>
+    <ul>
+        {% for directivo in directivos %}
+            <li>{{directivo.nombre}}
+                {{directivo.apellido}}
+                {{directivo.dni}}
+            </li>
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+    <p>No hay datos con esa descripción.</p>
+    {% endif %}
+
+    <p style="color: red;"> {{respuesta}} </p>
+
+{% endblock contenidoQueCambia %}

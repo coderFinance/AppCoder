@@ -1,0 +1,22 @@
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+    {% if grados %}
+    <h2>Resultado de la busqueda de los cursos con división: {{division}}</h2>
+    <ul>
+        {% for grado in grados %}
+            <li>{{grado.grado}}{{grado.division}}</li>
+        {% endfor %} 
+    </ul>
+
+    {% else %}
+    <p>No hay datos con esa descripción.</p>
+    {% endif %}
+    
+    <p style="color: red;"> {{respuesta}} </p>
+    
+{% endblock contenidoQueCambia %}
