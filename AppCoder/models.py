@@ -83,12 +83,12 @@ class Directivo(models.Model):
     def __str__(self):
         return f'Nombre: {self.nombre} - Apellido: {self.apellido} - DNI: {self.dni} - Imagen {self.imagen}'
 
-# class Avatar(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     imagen = models.ImageField(upload_to= 'avatares', null=True, blank=True)
+class Avatar(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to= 'avatares', null=True, blank=True)
 
-#     def __str__(self):
-#         return f'Imagen de {self.user.username} '
+    def __str__(self):
+        return f'Imagen de {self.user.username} '
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from AppCoder.models import Profile
+from AppCoder.models import Avatar, Profile
 
 
 class FormCurso(forms.Form):
@@ -56,10 +56,10 @@ class UserEditForm(UserCreationForm):
 
 
 
-# class AvatarForm(forms.ModelForm):
-#     class Meta:
-#         model = Avatar
-#         fields = ('user', 'imagen',)
+class AvatarForm(forms.ModelForm):
+    class Meta:
+        model = Avatar
+        fields = ('user', 'imagen',)
 
 
 class UserRegisterForm(UserCreationForm):

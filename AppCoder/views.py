@@ -14,8 +14,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 
-from AppCoder.models import Curso, Alumno, Docente, Directivo
-from AppCoder.forms import FormDocente, FormDirectivo, FormCurso, FormAlumno, UserRegisterForm, ProfileUpdateForm, UserUpdateForm
+from AppCoder.models import Avatar, Curso, Alumno, Docente, Directivo
+from AppCoder.forms import AvatarForm, FormDocente, FormDirectivo, FormCurso, FormAlumno, UserRegisterForm, ProfileUpdateForm, UserUpdateForm
 from django.contrib import messages
 
 
