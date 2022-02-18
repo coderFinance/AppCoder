@@ -15,8 +15,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from AppCoder.models import Avatar, Curso, Alumno, Docente, Directivo
-from AppCoder.forms import AvatarForm, FormDocente, FormDirectivo, FormCurso, FormAlumno, UserRegisterForm, ProfileUpdateForm, UserUpdateForm
+from AppCoder.forms import AvatarForm, FormDocente, FormDirectivo, FormCurso, FormAlumno, UserRegisterForm, ProfileUpdateForm, UserUpdateForm, UserEditForm
 from django.contrib import messages
+
+from django.db import connection
 
 
 def  register(request):
@@ -66,7 +68,8 @@ def about(request):
     return render(request, "AppCoder/About.html")
 
 def paginas(request):
-    return render(request, "AppCoder/Paginas.html")
+    tables = connection.introspection.table_names()
+    return render(request, "AppCoder/Paginas.html",{ "tables": tables})
 
 #########################################################################################
 

@@ -17,22 +17,28 @@
 
     {% for alumno in object_list %}
         
-        <li>
-            <p>Alumno {{alumno.nombre}} {{alumno.apellido}} </p>
-            {% if alumno.imagen %}
-                <img height= '150px' src='/media/{{alumno.imagen}}'>
-            {% endif %}
-            <div>
-                <a href="{% url 'DetailAlumno' alumno.id %}">Ver</a>
-                <a href="{% url 'EditAlumno' alumno.id %}">Editar</a>
-                <a href="{% url 'DeleteAlumno' alumno.id %}">Borrar</a>    
+        <li class="list-item-own">
+            <div class="list-item-own-div">
+                <p>Alumno: {{alumno.nombre}} {{alumno.apellido}} </p>
+                {% if alumno.imagen %}
+                    <img height= '150px' src='/media/{{alumno.imagen}}'>
+                {% endif %}
+                <div>
+                    <a href="{% url 'DetailAlumno' alumno.id %}">Leer mas...</a>
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'EditAlumno' alumno.id %}">Editar</a>
+                        <a href="{% url 'DeleteAlumno' alumno.id %}">Borrar</a>        
+                    {% endif %}
+                </div>
             </div>
         </li>
-
     {% endfor %}
         
 </ul>
 
+<p>Autor: admin</p>
+<p>Fecha: 15/02/2022</p>
 
+<p><a style="text-decoration: none" href="{% url 'paginas'  %}" class="bt bi-backspace"> Regresar a la pagina anterior</a></p>
 
 {% endblock contenidoQueCambia %}

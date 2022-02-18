@@ -1,24 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'AppCoder/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
     <h1>Paginas</h1>
 
 
-    <ul>            
-        <a href="{% url 'VistaAlumno' %}"><li>Alumnos</li></a>
+    <ul class="ulPaginas">
+        
+        {% for table in tables %}
+            
+            {% if "AppCoder" in table %}
+                
+                {% if "avatar" not in table %}
+
+                    {% if "alumno" in table %}
+
+                        <a href="{% url 'VistaAlumno' %}"><li class="listadoPagina">Alumnos</li></a>
+                        <p>Pagina con informacion de los alumnos de la institución.</p>
+                    
+                    {% elif "curso" in table %}
+
+                        <a href="{% url 'VistaCurso' %}"><li class="listadoPagina">Cursos</li></a>
+                        <p>Pagina con informacion de los cursos de la institución.</p>
+
+                    {% elif "docente" in table %}
+
+                        <a href="{% url 'VistaDocente' %}"><li class="listadoPagina">Docentes</li></a>
+                        <p>Pagina con informacion de los docentes de la institución.</p>
+
+                    {% else %}
+                    
+                        <a href="{% url 'VistaDirectivo' %}"><li class="listadoPagina">Directivos</li></a>
+                        <p>Pagina con informacion de los directivos de la institución.</p>
+
+                    {% endif %}
+                    
+                {% endif %}
+                
+            {% endif %}
+                
+        {% endfor %}
+                        
+        <!-- <a href="{% url 'VistaAlumno' %}"><li>Alumnos</li></a>
             <p>Pagina con informacion de los alumnos de la institución</p>
         <a href="{% url 'VistaDocente' %}"><li>Docentes</li></a>
             <p>Pagina con informacion de los docentes de la institución</p>
         <a href="{% url 'VistaCurso' %}"><li>Cursos</li></a>
             <p>Pagina con informacion de los cursos de la institución</p>
         <a href="{% url 'VistaDirectivo' %}"><li>Directivos</li></a>
-            <p>Pagina con informacion de los directivos de la institución</p>
+            <p>Pagina con informacion de los directivos de la institución</p> -->
     </ul>
-</body>
-</html>
+
+
+{% endblock contenidoQueCambia %}
