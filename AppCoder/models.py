@@ -95,14 +95,12 @@ class Profile(models.Model):
     bio = models.TextField(null=True, blank=True)
     link = models.URLField(max_length=200, null=True, blank=True)
 
-    #Averiguar para que sirve
-    # class Meta:
-    #     ordering = ['user__username']
 
 
     def __str__(self):
         return f'{self.user.username} Profile'
     
+    #en stand-by ya que interfiere con todas las funciones save del proyecto
     # def save(self):
     #     super().save()
 

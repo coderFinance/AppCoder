@@ -30,7 +30,7 @@
                         <a href="{% url 'VistaDocente' %}"><li class="listadoPagina">Docentes</li></a>
                         <p>Pagina con informacion de los docentes de la institución.</p>
 
-                    {% else %}
+                    {% elif 'directivo' in table%}
                     
                         <a href="{% url 'VistaDirectivo' %}"><li class="listadoPagina">Directivos</li></a>
                         <p>Pagina con informacion de los directivos de la institución.</p>
@@ -43,14 +43,6 @@
                 
         {% endfor %}
                         
-        <!-- <a href="{% url 'VistaAlumno' %}"><li>Alumnos</li></a>
-            <p>Pagina con informacion de los alumnos de la institución</p>
-        <a href="{% url 'VistaDocente' %}"><li>Docentes</li></a>
-            <p>Pagina con informacion de los docentes de la institución</p>
-        <a href="{% url 'VistaCurso' %}"><li>Cursos</li></a>
-            <p>Pagina con informacion de los cursos de la institución</p>
-        <a href="{% url 'VistaDirectivo' %}"><li>Directivos</li></a>
-            <p>Pagina con informacion de los directivos de la institución</p> -->
     </ul>
 
 
